@@ -3,6 +3,7 @@ namespace ConsoleTicTacToe;
 public class TicTacToeGame
 {
       private char[][] board;
+      private bool isXTurn = true;
 
       public TicTacToeGame()
       {
@@ -43,4 +44,5 @@ public class TicTacToeGame
                 |     |      
           """;
       }
+      
 }
