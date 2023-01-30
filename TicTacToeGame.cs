@@ -6,15 +6,27 @@ public class TicTacToeGame
     private bool hasWinner = false;
     private bool isXTurn = true;
 
-    private HashSet<string> squaresLeft = new() { "a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3" };
+    private Dictionary<string, (int, int)> squaresLeft = new Dictionary<string, (int, int)>();
+    
 
-    public TicTacToeGame()
+
+
+          public TicTacToeGame()
     {
         board = new char[3][];
         board[0] = new char[3] { ' ', ' ', ' ' };
         board[1] = new char[3] { ' ', ' ', ' ' };
         board[2] = new char[3] { ' ', ' ', ' ' };
 
+        squaresLeft.Add("1a", (0,0));
+        squaresLeft.Add("2a", (1,0));
+        squaresLeft.Add("3a", (2,0));
+        squaresLeft.Add("1b", (0, 1));
+        squaresLeft.Add("2b", (1,1));
+        squaresLeft.Add("3b", (2,1));
+        squaresLeft.Add("1c", (0, 2));
+        squaresLeft.Add("2c", (1,2));
+        squaresLeft.Add("3c", (2,2));
         Template();
         Console.WriteLine(ToString());
         FirstInstructions();
@@ -52,8 +64,13 @@ public class TicTacToeGame
           """;
     }
 
-    public void FirstInstructions()
+    private void FirstInstructions()
     {
         Console.WriteLine("X goes first. Valid inputs are shown below");
     }
-}
+
+    private void PrintValidLocations()
+    {
+          
+    }
+    }
